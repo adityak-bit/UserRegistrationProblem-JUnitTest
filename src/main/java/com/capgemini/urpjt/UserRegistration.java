@@ -78,10 +78,10 @@ public class UserRegistration {
 		
 		//newUser.lastNameValidator();//last name validator
 		
-		//newUser.emailIdValidator();//email id validator
+		newUser.emailIdValidator();//email id validator
 		
 		//newUser.mobileNoValidator();//mobile no validator
 		
-		newUser.passwordValidator();//password validator
+		//newUser.passwordValidator();//password validator
 	}
 }
