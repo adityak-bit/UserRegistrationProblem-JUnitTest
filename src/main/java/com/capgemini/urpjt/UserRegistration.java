@@ -8,10 +8,10 @@ public class UserRegistration {
 
 	Scanner sc = new Scanner(System.in);
 	
-	public void firstNameValidator() {
-		System.out.println("Enter your First Name");
-		System.out.println("First Name should start with uppercase and have min 3 characters");
-		String firstName = sc.nextLine();
+	public boolean firstNameValidator(String firstName) {
+		//System.out.println("Enter your First Name");
+		//System.out.println("First Name should start with uppercase and have min 3 characters");
+		//String firstName = sc.nextLine();
 		Pattern pattern = Pattern.compile("^([A-Z])[A-Za-z]{2,}");
 		Matcher matcher = pattern.matcher(firstName);
 		boolean b = matcher.find();
@@ -19,12 +19,13 @@ public class UserRegistration {
 			System.out.println("First Name is validated");
 		else
 			System.out.println("Please enter correct First Name");
+		return b;
 	}
 	
-	public void lastNameValidator() {
-		System.out.println("Enter your Last Name");
-		System.out.println("Last Name should start with uppercase and have min 3 characters");
-		String lastName = sc.nextLine();
+	public boolean lastNameValidator(String lastName) {
+		//System.out.println("Enter your Last Name");
+		//System.out.println("Last Name should start with uppercase and have min 3 characters");
+		//String lastName = sc.nextLine();
 		Pattern pattern = Pattern.compile("^([A-Z])[A-Za-z]{2,}");
 		Matcher matcher = pattern.matcher(lastName);
 		boolean b = matcher.find();
@@ -32,11 +33,12 @@ public class UserRegistration {
 			System.out.println("Last Name is validated");
 		else
 			System.out.println("Please enter correct Last Name");
+		return b;
 	}
 	
-	public void emailIdValidator() {
-		System.out.println("Enter your email id");
-		String emailId = sc.nextLine();
+	public boolean emailIdValidator(String emailId) {
+		//System.out.println("Enter your email id");
+		//String emailId = sc.nextLine();
 		Pattern pattern = Pattern.compile("^([a-z]){1,}[a-z0-9]*([+_-]){0,1}[a-z0-9]+(@)([a-z0-9]+)(\\.[a-z]{2,3}){1}(\\.[a-z]{2})?$");
 		Matcher matcher = pattern.matcher(emailId);
 		boolean b = matcher.find();
@@ -44,11 +46,12 @@ public class UserRegistration {
 			System.out.println("Email Id is validated");
 		else
 			System.out.println("Please enter correct Email Id");
+		return b;
 	}
 
-	public void mobileNoValidator() {
-		System.out.println("Enter your Mobile No :");
-		String mobileNo = sc.nextLine();
+	public boolean mobileNoValidator(String mobileNo) {
+		//System.out.println("Enter your Mobile No :");
+		//String mobileNo = sc.nextLine();
 		Pattern pattern = Pattern.compile("^\\d{2} [1-9]\\d{9}$");
 		Matcher matcher = pattern.matcher(mobileNo);
 		Boolean b = matcher.find();
@@ -56,11 +59,12 @@ public class UserRegistration {
 			System.out.println("Mobile No is Validated");
 		else
 			System.out.println("Please enter the correct mobile no");
+		return b;
 	}
 
-	public void passwordValidator() {
-		System.out.println("Enter your Password :");
-		String password = sc.next();
+	public boolean passwordValidator(String password) {
+		//System.out.println("Enter your Password :");
+		//String password = sc.next();
 		Pattern pattern = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?=.*\\W)(?!.*\\W\\w*\\W)(?!.*\\s).{8,}$");
 		Matcher matcher = pattern.matcher(password);
 		Boolean b = matcher.find();
@@ -68,20 +72,22 @@ public class UserRegistration {
 			System.out.println("Password is Validated");
 		else
 			System.out.println("Please enter the correct password");
+		return b;
 	}
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to user registration page");
-		UserRegistration newUser = new UserRegistration();
+	 /*  UserRegistration newUser = new UserRegistration();
 
-		//newUser.firstNameValidator();//first name validator
+		newUser.firstNameValidator();//first name validator
 		
-		//newUser.lastNameValidator();//last name validator
+		newUser.lastNameValidator();//last name validator
 		
 		newUser.emailIdValidator();//email id validator
 		
-		//newUser.mobileNoValidator();//mobile no validator
+		newUser.mobileNoValidator();//mobile no validator
 		
-		//newUser.passwordValidator();//password validator
+		newUser.passwordValidator();//password validator
+		*/
 	}
 }
